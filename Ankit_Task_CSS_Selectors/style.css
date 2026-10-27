@@ -1,0 +1,108 @@
+body {
+  background-color: coral;
+  font-family: "Times New Roman", serif;
+  margin: 28px;
+}
+
+/* All three headings use the same class */
+.head {
+  color: darkblue;
+}
+
+/* Second heading background */
+#bglime {
+  background-color: #66ff66;
+}
+
+/* Red text within the second heading */
+.red-text {
+  color: red;
+}
+
+/* Style paragraphs using the p element selector */
+p {
+  color: white;
+  font-size: 14px;
+}
+
+/* Second paragraph */
+#para {
+  color: green;
+}
+
+/* The word "paragraph" in the second paragraph */
+#para .paragraph {
+  color: black;
+  font-size: 18px;
+}
+
+/* The word "paragraph" in the third paragraph */
+p:nth-of-type(3) .paragraph {
+  color: black;
+  font-size: 18px;
+}
+
+/* Style links without adding a class or ID to the a tags */
+a {
+  color: yellow;
+  background-color: blue;
+  text-decoration: none;
+}
+
+/* Lists styled without classes or IDs */
+ul {
+  color: white;
+  font-size: 10px;
+}
+
+ol {
+  color: brown;
+  font-size: 10px;
+}
+
+ol li:nth-child(2) {
+  color: blue;
+}
+
+ol li:nth-child(3) {
+  color: red;
+}
+
+/* Main page heading */
+body > h1 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: Arial, sans-serif;
+  margin-top: 0;
+}
+
+/* Output area */
+main {
+  background-color: coral;
+  border: 4px solid black;
+  padding: 4px;
+  min-height: 320px;
+}
+
+main > h1.head,
+main > h2.head,
+main > h3.head {
+  margin: 8px 0 12px;
+}
+
+main > h1.head {
+  font-size: 16px;
+}
+
+main > h2.head {
+  font-size: 24px;
+}
+
+main > h3.head {
+  font-size: 8px;
+}
+
+h4 {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
