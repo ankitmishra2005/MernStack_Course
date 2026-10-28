@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+}
+
+/* Centered card using viewport units */
+.image-card {
+    width: 50vw;
+    height: 55vh;
+    margin: 22.5vh 25vw;
+    border: 1px solid #777777;
+    font-size: 0;
+}
+
+.image-card img {
+    display: block;
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.image-card button {
+    display: block;
+    width: 100%;
+    height: 25%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-top: 1px solid #777777;
+    background: linear-gradient(to right, #ffb511, #43d43b);
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vh;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.image-card button:hover {
+    background: linear-gradient(to right, #f4a900, #36c92f);
+}
+
+@media (max-width: 600px) {
+    .image-card {
+        width: 70vw;
+        height: 45vh;
+        margin: 27.5vh 15vw;
+    }
+
+    .image-card button {
+        font-size: 2.2vh;
+    }
+}
