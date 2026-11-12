@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #536471;
+}
+
+.page {
+  width: 96vw;
+  height: 96vh;
+  margin: 2vh 2vw;
+  border: 2px solid #333333;
+  background: #ffffff;
+}
+
+/* Navbar uses inline-block instead of Flexbox */
+.navbar {
+  width: 100%;
+  height: 14%;
+  padding: 0 6%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 0;
+}
+
+.logo, .navigation, .username {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  width: 25%;
+  text-align: left;
+  color: #536471;
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.navigation {
+  width: 50%;
+  text-align: center;
+}
+
+.navigation a {
+  display: inline-block;
+  margin: 0 1%;
+  color: #687987;
+  text-decoration: none;
+  font-size: 1vw;
+}
+
+.navigation a:hover {
+  color: #00a8f3;
+}
+
+.username {
+  width: 25%;
+  text-align: right;
+  color: #00a8f3;
+  font-size: 0.8vw;
+  font-weight: bold;
+}
+
+.username {
+  padding: 1.2vh 1.3vw;
+  border-radius: 10px;
+  background: #e8f6ff;
+}
+
+/* Two hero columns use inline-block and viewport dimensions */
+.hero {
+  width: 100%;
+  height: 86%;
+  padding: 0 8%;
+  text-align: center;
+  font-size: 0;
+}
+
+.hero-content, .hero-image {
+  display: inline-block;
+  width: 49%;
+  vertical-align: middle;
+  text-align: left;
+  font-size: 1vw;
+}
+
+.hero-content {
+  padding-right: 3%;
+}
+
+.hero-content h1 {
+  margin: 0 0 1.5vh;
+  color: #536471;
+  font-size: 3.2vw;
+  line-height: 1.35;
+}
+
+.hero-content h1 span {
+  color: #08a9f5;
+}
+
+.hero-content p {
+  max-width: 95%;
+  margin: 0 0 3vh;
+  color: #9aa7b2;
+  font-size: 1.25vw;
+  line-height: 1.5;
+}
+
+.booking-button {
+  display: inline-block;
+  padding: 2vh 2.8vw;
+  border-radius: 14px;
+  background: linear-gradient(110deg, #00a8f3, #35b9f5);
+  color: white;
+  text-decoration: none;
+  font-size: 1vw;
+  font-weight: bold;
+}
+
+.booking-button:hover {
+  background: linear-gradient(110deg, #078bd0, #159fe0);
+}
+
+.hero-image {
+  text-align: center;
+}
+
+.hero-image img {
+  display: inline-block;
+  width: 90%;
+  height: 52vh;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+  .navbar { height: 15%; padding: 0 3%; }
+  .logo { width: 20%; font-size: 3vw; }
+  .navigation { width: 58%; }
+  .navigation a { margin: 0 1%; font-size: 1.8vw; }
+  .username { width: 22%; padding: 1vh 1vw; font-size: 1.5vw; }
+  .hero { height: 85%; padding: 0 5%; }
+  .hero-content, .hero-image { width: 49%; }
+  .hero-content h1 { font-size: 4vw; }
+  .hero-content p { font-size: 2vw; }
+  .booking-button { padding: 1.5vh 2vw; font-size: 1.8vw; }
+  .hero-image img { height: 40vh; }
+}
