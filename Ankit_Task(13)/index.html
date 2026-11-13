@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even or Odd Checker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="number-art" aria-hidden="true">
+        <div class="art-row odd-row">
+          <span class="label">ODD</span>
+          <span class="dice">⚀</span>
+          <span class="dice">⚂</span>
+          <span class="dice">⚄</span>
+        </div>
+        <div class="art-row even-row">
+          <span class="label">EVEN</span>
+          <span class="dice">⚁</span>
+          <span class="dice">⚃</span>
+          <span class="dice">⚅</span>
+        </div>
+      </div>
+      <p class="eyebrow">JAVASCRIPT FUNDAMENTALS</p>
+      <h1>Even or <span>Odd?</span></h1>
+      <p class="subtitle">A simple number checker using JavaScript variables and an if-else statement.</p>
+    </header>
+
+    <section class="info-card">
+      <h2>How does it work?</h2>
+      <p>A number is <strong>even</strong> when it is exactly divisible by 2. Otherwise, it is <strong>odd</strong>.</p>
+      <div class="operator">number % 2 === 0</div>
+      <p class="small">The modulo (%) operator returns the remainder after division.</p>
+    </section>
+
+    <section class="examples">
+      <h2>Example numbers</h2>
+      <div class="number-grid">
+        <div class="number-card odd"><span>5</span><strong>ODD</strong></div>
+        <div class="number-card even"><span>10</span><strong>EVEN</strong></div>
+        <div class="number-card odd"><span>7</span><strong>ODD</strong></div>
+        <div class="number-card even"><span>12</span><strong>EVEN</strong></div>
+      </div>
+    </section>
+
+    <div class="console-tip">
+      <span class="dot"></span>
+      <p>Open Developer Tools (press <strong>F12</strong>) and select the <strong>Console</strong> tab to see the JavaScript results.</p>
+    </div>
+  </main>
+  <footer>Task 13 · JavaScript Even or Odd</footer>
+</body>
+</html>
