@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Checkout | Thala 7</title><link rel="stylesheet" href="style.css"><script src="script.js" defer></script></head>
+<body>
+<main class="checkout-shell">
+  <a class="brand checkout-brand" href="index.html">Thala <span>7.</span></a>
+  <div class="checkout-grid">
+    <section class="checkout-form">
+      <p class="eyebrow">ALMOST THERE</p><h1>Checkout</h1>
+      <h2>Contact Details</h2>
+      <label class="field-label" for="email">Email ID</label><input class="form-input" id="email" type="email" placeholder="you@example.com" required>
+      <h2 class="payment-title">Payment</h2>
+      <div class="payment-methods"><button class="method active" data-method="Card">▣<span>Card</span></button><button class="method" data-method="Crypto">₿<span>Crypto</span></button><button class="method" data-method="Bank">▤<span>Bank</span></button><button class="method" data-method="Other">⋮<span>Other</span></button></div>
+      <form id="paymentForm">
+        <div id="cardFields"><label class="field-label" for="cardNumber">Card Number</label><input class="form-input" id="cardNumber" inputmode="numeric" maxlength="19" placeholder="1234 5678 9012 3456"><div class="form-two"><div><label class="field-label" for="expiry">Expiry</label><input class="form-input" id="expiry" placeholder="MM / YY"></div><div><label class="field-label" for="cvv">CVV</label><input class="form-input" id="cvv" inputmode="numeric" maxlength="4" placeholder="123"></div></div><div class="form-two"><div><label class="field-label" for="country">Country</label><select class="form-input" id="country"><option>India</option><option>United States</option><option>United Kingdom</option></select></div><div><label class="field-label" for="zip">ZIP / PIN Code</label><input class="form-input" id="zip" placeholder="400001"></div></div></div>
+        <p id="methodMessage" class="method-message" hidden>Selected payment method: <strong>Card</strong>. This is a demo checkout; no payment will be processed.</p>
+        <button class="button button-orange full-button" type="submit">Pay Securely <span id="checkoutTotal">₹0</span></button>
+      </form>
+      <p class="secure-note">🔒 Your payment information is kept secure. Demo interface only.</p>
+    </section>
+    <aside class="checkout-summary"><h2>Order Summary</h2><div class="summary-product"><img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=200&q=80" alt="Sneaker"><div><strong>Seven Sprint Runner</strong><small>Selected items from your cart</small></div></div><div class="summary-line"><span>Sub Total</span><strong id="checkoutSubtotal">₹0</strong></div><div class="summary-line"><span>Taxes</span><strong id="checkoutTaxes">₹0</strong></div><div class="summary-line"><span>Discount</span><strong id="checkoutDiscount">₹0</strong></div><div class="summary-line total-line"><span>Total</span><strong id="checkoutGrandTotal">₹0</strong></div><div class="payment-logos"><b>Razorpay</b><span>🔒 SECURE CHECKOUT</span></div></aside>
+  </div>
+</main>
+</body></html>
