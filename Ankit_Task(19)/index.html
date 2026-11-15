@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ServiceHub | Service Booking</title><link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<header><nav class="nav wrap">
+<a class="logo" href="#home"><span>S</span> ServiceHub</a>
+<button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+<div class="links" id="navLinks"><a href="#home">Home</a><a href="#services">Services</a><a href="#booking">About Us</a><a href="#footer">Contact Us</a></div>
+<div class="user"><span id="username">Ankit</span><button id="logoutBtn" aria-label="Log out">↪</button></div>
+</nav></header>
+<main id="home" class="wrap layout">
+<section class="panel cart-panel">
+<div class="heading"><div><small>YOUR SELECTION</small><h1>Added Items</h1></div><span id="cartCount" class="badge">0 items</span></div>
+<table><thead><tr><th>S.No</th><th>Service Name</th><th>Price</th><th></th></tr></thead><tbody id="cartItems"></tbody></table>
+<div id="emptyState" class="empty"><b class="info">ⓘ</b><strong>No Items Added</strong><p>Add items to the cart from the services section.</p></div>
+<div class="total"><strong>Total Amount</strong><b id="totalAmount">₹0</b></div>
+<div class="booking" id="booking"><small>ALMOST THERE</small><h2>Book Now</h2>
+<form id="bookingForm">
+<label for="fullName">Full Name</label><input id="fullName" name="fullName" placeholder="Enter your full name" required>
+<label for="email">Email ID</label><input id="email" name="email" type="email" placeholder="name@example.com" required>
+<label for="password">Password</label><input id="password" name="password" type="password" minlength="6" placeholder="Enter password" required>
+<button class="primary" type="submit">Book Now →</button><p id="formMessage" role="status"></p>
+</form></div>
+</section>
+<section class="panel services-panel" id="services">
+<small>FIND THE RIGHT HELP</small><h2>Browse Our Services</h2>
+<p class="intro">Click on Add Item to add a service to your cart, or skip to explore the next one.</p>
+<div id="serviceList" class="service-list"></div>
+<div class="hint">ⓘ Add the items to your cart and book when you're ready.</div>
+</section>
+</main>
+<section class="benefits"><div class="wrap benefit-grid">
+<div><i>✓</i><span><b>Trusted Professionals</b><p>Experienced and verified experts.</p></span></div>
+<div><i>⚡</i><span><b>Quick Service</b><p>Convenient booking at your pace.</p></span></div>
+<div><i>♡</i><span><b>Quality Assured</b><p>Service that puts you first.</p></span></div>
+</div></section>
+<footer id="footer"><div class="wrap foot">
+<div><a class="logo" href="#home"><span>S</span> ServiceHub</a><p>Making everyday tasks simpler, one booking at a time.</p></div>
+<div><b>Important Links</b><a href="#home">Home</a><a href="#services">Services</a><a href="#booking">Book a Service</a></div>
+<div><b>Contact Us</b><p>support@servicehub.example</p><p>+91 98765 43210</p></div>
+</div><div class="copyright">© 2026 ServiceHub. All rights reserved.</div></footer>
+</body></html>
