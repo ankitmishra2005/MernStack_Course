@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Records | Map & Filter</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<main class="app">
+<header class="topbar">
+  <div><p class="greeting">STUDENT PORTAL</p><h1>Hi, <span>Username</span></h1></div>
+  <button class="login-button" type="button">Login</button>
+</header>
+<section class="search-panel" aria-label="Search students">
+  <div class="search-field">
+    <input id="searchInput" type="search" placeholder="Search student by name..." aria-label="Search student by name">
+    <span class="search-icon" aria-hidden="true">⌕</span>
+  </div>
+  <button id="searchButton" type="button">Search</button>
+</section>
+<section class="results-heading">
+  <div><p class="eyebrow">STUDENT DIRECTORY</p><h2>Student Records</h2></div>
+  <span id="resultCount" class="result-count" aria-live="polite">9 students</span>
+</section>
+<section id="studentGrid" class="student-grid" aria-live="polite"></section>
+<p id="emptyState" class="empty-state" hidden>No students found. Try another name.</p>
+<footer>Student Records · JavaScript Map &amp; Filter Exercise</footer>
+</main>
+</body>
+</html>

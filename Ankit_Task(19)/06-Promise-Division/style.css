@@ -1,0 +1,6 @@
+body { font-family: Arial, sans-serif; background: #f4f7fb; padding: 30px; color: #202938; }
+.container { max-width: 720px; margin: 20px auto; background: white; padding: 28px; border-radius: 14px; box-shadow: 0 5px 20px #0001; }
+h1 { color: #174ea6; }
+.result { padding: 13px; margin: 9px 0; background: #eef4ff; border-radius: 8px; }
+.success { border-left: 4px solid #099268; }
+.error { border-left: 4px solid #e03131; }

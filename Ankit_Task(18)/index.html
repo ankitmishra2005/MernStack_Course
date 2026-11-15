@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Greeting & Colour Boxes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <p class="eyebrow">JavaScript DOM Practice</p>
+      <h1 id="greeting">Hello</h1>
+      <p class="subtitle">Enter your name and choose a colour box.</p>
+    </header>
+
+    <section class="color-section" aria-label="Interactive colour boxes">
+      <h2>Click a box to change its background</h2>
+      <div class="color-grid">
+        <button class="color-box red" data-color="red" type="button">Red</button>
+        <button class="color-box blue" data-color="blue" type="button">Blue</button>
+        <button class="color-box green" data-color="green" type="button">Green</button>
+        <button class="color-box yellow" data-color="yellow" type="button">Yellow</button>
+      </div>
+      <p id="color-message" class="color-message" aria-live="polite">Your selected colour will appear here.</p>
+    </section>
+
+    <section class="name-section">
+      <h2>Say hello!</h2>
+      <form id="greeting-form">
+        <label for="user-name">Your name</label>
+        <div class="input-row">
+          <input id="user-name" type="text" placeholder="Enter your name" autocomplete="given-name">
+          <button class="greet-button" type="submit">Greet Me</button>
+        </div>
+        <p class="hint">Click the button to update the greeting above.</p>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

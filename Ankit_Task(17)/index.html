@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise-Based Division</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <span class="tag">JAVASCRIPT PROMISES</span>
+      <h1>Promise-Based <span>Division</span></h1>
+      <p class="subtitle">A simple demonstration of asynchronous result handling and error handling.</p>
+    </header>
+
+    <section class="calculator">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">TRY IT YOURSELF</p>
+          <h2>Divide two numbers</h2>
+        </div>
+        <span class="promise-badge">Promise</span>
+      </div>
+
+      <form id="divideForm">
+        <div class="inputs">
+          <label>
+            First number
+            <input id="firstNumber" type="number" step="any" value="20" required>
+          </label>
+          <span class="operator">÷</span>
+          <label>
+            Second number
+            <input id="secondNumber" type="number" step="any" value="4" required>
+          </label>
+        </div>
+        <button type="submit">Calculate division <span aria-hidden="true">→</span></button>
+      </form>
+      <div id="liveResult" class="live-result" role="status" aria-live="polite">
+        Enter two numbers and calculate to see the result.
+      </div>
+    </section>
+
+    <section class="test-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">REQUIRED DEMONSTRATION</p>
+          <h2>Five test cases</h2>
+        </div>
+        <button id="runTests" class="secondary-button" type="button">Run all tests</button>
+      </div>
+      <p class="helper">The examples below include normal divisions, decimal results, negative values and division by zero.</p>
+      <div id="testResults" class="test-list">
+        <p class="placeholder">Click “Run all tests” to execute the five Promise examples.</p>
+      </div>
+    </section>
+
+    <footer>Built with JavaScript Promises · No external libraries</footer>
+  </main>
+</body>
+</html>

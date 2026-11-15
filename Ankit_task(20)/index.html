@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FreshFold laundry and dry-cleaning services. Book convenient laundry services online.">
+  <title>FreshFold | Laundry Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="#home"><span class="brand-mark">F</span> freshfold<span class="brand-dot">.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#contact">Contact Us</a>
+      </div>
+      <span class="username">Hello, Guest</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-copy">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> LAUNDRY MADE SIMPLE</span>
+        <h1>Fresh clothes.<br><span>More time for life.</span></h1>
+        <p>From everyday washing to expert dry cleaning, we take care of your clothes with the attention they deserve.</p>
+        <a class="btn btn-primary" href="#services">Book a service today <span>→</span></a>
+        <div class="hero-note"><span class="avatar-stack">✦</span> Trusted by 240+ happy customers</div>
+      </div>
+      <div class="hero-art">
+        <div class="art-circle"></div>
+        <div class="laundry-card">
+          <div class="washer">
+            <div class="washer-top"><i></i><i></i><i></i></div>
+            <div class="washer-door"><div class="door-shine"></div></div>
+            <div class="washer-bottom"></div>
+          </div>
+          <div class="shirt shirt-one">✦</div><div class="shirt shirt-two">✧</div>
+          <div class="bubble bubble-one"></div><div class="bubble bubble-two"></div>
+        </div>
+        <div class="floating-tag"><span>✓</span> Care in every wash</div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stats-title">A little care.<br><strong>A big difference.</strong></div>
+        <div><strong>15+</strong><span>Laundry Services</span></div>
+        <div><strong>240+</strong><span>Happy Customers</span></div>
+        <div><strong>2+ yrs</strong><span>Experience</span></div>
+      </div>
+    </section>
+
+    <section class="section container" id="services">
+      <div class="section-heading">
+        <div><span class="eyebrow">WHAT WE DO</span><h2>Our laundry services</h2></div>
+        <p>Choose what you need. We'll make it fresh.</p>
+      </div>
+      <div class="booking-layout">
+        <aside class="booking-sidebar">
+          <div class="cart-panel">
+            <div class="panel-title"><div><span class="eyebrow">YOUR SELECTION</span><h3>Your basket</h3></div><span class="cart-count" id="cartCount">0</span></div>
+            <div id="cartItems" class="cart-items"><div class="empty-cart"><span>🧺</span><strong>Your basket is empty</strong><small>Add a service to get started.</small></div></div>
+            <div class="total-row"><span>Total amount</span><strong id="totalAmount">₹0</strong></div>
+          </div>
+          <form class="booking-form" id="bookingForm">
+            <span class="eyebrow">LET'S GET IT BOOKED</span>
+            <h3>Book your pickup</h3>
+            <label for="fullName">Full name</label><input id="fullName" name="fullName" type="text" placeholder="Your full name" required>
+            <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required>
+            <label for="phone">Phone number</label><input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" pattern="[0-9+() -]{8,18}" required>
+            <label for="pickupDate">Preferred pickup date</label><input id="pickupDate" name="pickupDate" type="date" required>
+            <button class="btn btn-primary btn-full" type="submit" id="bookButton">Book Now <span>→</span></button>
+            <p class="form-message" id="formMessage" aria-live="polite"></p>
+            <small class="form-footnote">We'll email you a confirmation with your order details.</small>
+          </form>
+        </aside>
+
+        <div class="services-area">
+          <div class="services-intro"><h3>Browse our services</h3><p>Professional care for every fabric and every occasion.</p></div>
+          <div class="service-grid" id="serviceGrid"></div>
+          <div class="cart-hint"> <span>＋</span> Add the services you need to your basket, then complete the booking form.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="qualities" id="about">
+      <div class="container">
+        <div class="section-heading centered"><div><span class="eyebrow">THE FRESHFOLD PROMISE</span><h2>Care that comes full circle</h2></div><p>Little details make a big difference. That's the way we do laundry.</p></div>
+        <div class="quality-grid">
+          <article class="quality-card"><div class="quality-icon">✧</div><h3>Premium care</h3><p>Thoughtful cleaning methods that help your favourite clothes last longer.</p></article>
+          <article class="quality-card"><div class="quality-icon">♡</div><h3>Quick support</h3><p>Friendly assistance whenever you need help with your order.</p></article>
+          <article class="quality-card"><div class="quality-icon">↗</div><h3>Timely delivery</h3><p>Convenient pickup and delivery planned around your schedule.</p></article>
+          <article class="quality-card"><div class="quality-icon">₹</div><h3>Affordable prices</h3><p>Reliable laundry services at prices that make sense.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div><span class="eyebrow">THE FRESHFOLD EDIT</span><h2>A little freshness<br>in your inbox.</h2><p>Get service updates, useful care tips and occasional offers.</p></div>
+        <form id="newsletterForm" class="newsletter-form"><label class="sr-only" for="subscriberName">Full name</label><input id="subscriberName" type="text" placeholder="Full name" required><label class="sr-only" for="subscriberEmail">Email</label><input id="subscriberEmail" type="email" placeholder="Email address" required><button type="submit" class="btn btn-light">Subscribe →</button><small id="newsletterMessage" aria-live="polite"></small></form>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container footer-grid">
+      <div><a class="brand footer-brand" href="#home"><span class="brand-mark">F</span> freshfold<span class="brand-dot">.</span></a><p>Making laundry day feel like any other day. Fresh clothes, less hassle.</p></div>
+      <div><h4>Explore</h4><a href="#home">Home</a><a href="#services">Our Services</a><a href="#about">About Us</a></div>
+      <div><h4>Get in touch</h4><a href="mailto:hello@freshfold.example">hello@freshfold.example</a><a href="tel:+919876543210">+91 98765 43210</a><span>Mumbai, India</span></div>
+      <div><h4>Follow along</h4><div class="socials"><a href="#contact" aria-label="Instagram">ig</a><a href="#contact" aria-label="Facebook">f</a><a href="#contact" aria-label="Twitter">𝕏</a></div></div>
+    </div>
+    <div class="container footer-bottom"><span>© 2026 FreshFold Laundry. All rights reserved.</span><span>Made with care, for your everyday.</span></div>
+  </footer>
+</body>
+</html>

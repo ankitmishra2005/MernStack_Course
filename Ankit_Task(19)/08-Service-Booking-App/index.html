@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service Booking App</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="logo" href="#">QuickServe</a>
+    <div class="nav-links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About Us</a><a href="#contact">Contact Us</a>
+    </div>
+    <div class="user-area"><span id="username">Guest</span><button id="logoutButton">Logout</button></div>
+  </nav>
+
+  <header class="hero" id="home">
+    <p class="eyebrow">BOOK LOCAL SERVICES WITH EASE</p>
+    <h1>Make time for what matters.</h1>
+    <p>Choose trusted home services and book them in a few simple steps.</p>
+  </header>
+
+  <main class="layout">
+    <section class="cart-panel">
+      <h2>Your Selected Services</h2>
+      <p class="muted" id="emptyMessage">No items have been added yet.</p>
+      <ul id="cartList" class="cart-list"></ul>
+      <div class="total-row"><span>Total Amount</span><strong id="totalAmount">₹0</strong></div>
+
+      <form id="bookingForm" class="booking-form">
+        <h2>Book Now</h2>
+        <label for="fullName">Full name</label>
+        <input id="fullName" name="fullName" type="text" placeholder="Your full name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" placeholder="Enter a password" required minlength="6">
+        <button class="primary-button full-width" type="submit">Confirm Booking</button>
+        <p class="form-note">Demo only: details are not sent to a server.</p>
+      </form>
+    </section>
+
+    <section class="services-panel" id="services">
+      <div class="section-heading">
+        <div><p class="eyebrow">WHAT WE CAN DO FOR YOU</p><h2>Browse Our Services</h2></div>
+        <p class="muted">Select services to add them to your booking.</p>
+      </div>
+      <div id="serviceGrid" class="service-grid"></div>
+      <div class="cart-actions">
+        <p id="selectionInfo">Add services to your selection, then confirm your booking.</p>
+        <button id="addToCartButton" class="secondary-button">Add to Cart</button>
+        <button id="bookNowButton" class="primary-button">Book Now</button>
+      </div>
+      <section class="about" id="about"><h2>About QuickServe</h2><p>QuickServe is a sample service-booking interface created to demonstrate DOM manipulation, arrays, events and cart calculations.</p></section>
+      <footer id="contact">Questions? Contact us at hello@quickserve.example</footer>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
