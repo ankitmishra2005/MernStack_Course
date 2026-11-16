@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f7f2" />
+  <meta name="description" content="Greenwood Public Library — a welcoming place to read, learn, and connect." />
+  <title>Greenwood Public Library — A place to belong</title>
+
+  <!-- Tailwind CSS CDN: styling uses native Tailwind utilities only. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          animation: {
+            'fade-up': 'fadeUp .8s ease-out both',
+            'float': 'float 6s ease-in-out infinite',
+            'marquee': 'marquee 28s linear infinite'
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(22px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            marquee: {
+              '0%': { transform: 'translateX(0)' },
+              '100%': { transform: 'translateX(-50%)' }
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    /* Small accessibility and reveal helpers; all layout and visual styling use Tailwind. */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#f7f7f2] text-slate-900 antialiased selection:bg-emerald-200 selection:text-emerald-950">
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-[#f7f7f2]/85 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="group flex items-center gap-3" aria-label="Greenwood home">
+        <span class="grid h-10 w-10 place-items-center rounded-full bg-emerald-900 text-sm font-semibold tracking-tight text-white transition-transform duration-300 group-hover:rotate-12">G.</span>
+        <span class="text-xl font-semibold tracking-tight">Greenwood <span class="ml-1 rounded-full bg-emerald-100 px-2 py-1 align-middle text-[9px] font-bold uppercase tracking-[.15em] text-emerald-800">Open Sat</span></span>
+      </a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a class="relative text-sm text-slate-600 transition-colors hover:text-emerald-800 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-emerald-800 after:transition-all after:duration-300 hover:after:w-full" href="#sections">Sections</a>
+        <a class="relative text-sm text-slate-600 transition-colors hover:text-emerald-800 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-emerald-800 after:transition-all after:duration-300 hover:after:w-full" href="#gallery">Gallery</a>
+        <a class="relative text-sm text-slate-600 transition-colors hover:text-emerald-800 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-emerald-800 after:transition-all after:duration-300 hover:after:w-full" href="#membership">Membership</a>
+        <a class="relative text-sm text-slate-600 transition-colors hover:text-emerald-800 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-0 after:bg-emerald-800 after:transition-all after:duration-300 hover:after:w-full" href="#events">Events</a>
+      </div>
+      <div class="hidden items-center gap-3 md:flex">
+        <a href="#visit" class="rounded-full border border-slate-900 px-5 py-2.5 text-xs font-semibold transition-all duration-300 hover:bg-slate-900 hover:text-white">Visit Us <span aria-hidden="true">↗</span></a>
+      </div>
+      <button id="menuButton" class="grid h-10 w-10 place-items-center rounded-full border border-slate-300 text-xl md:hidden" aria-label="Open navigation menu" aria-expanded="false">☰</button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-slate-200 bg-[#f7f7f2] px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm">
+        <a href="#sections" class="mobile-link">Sections</a><a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#membership" class="mobile-link">Membership</a><a href="#events" class="mobile-link">Events</a>
+        <a href="#visit" class="mobile-link font-semibold text-emerald-800">Visit Us ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="mx-auto max-w-7xl px-5 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
+      <div class="grid items-end gap-10 lg:grid-cols-12 lg:gap-8">
+        <div class="animate-fade-up lg:col-span-7">
+          <p class="mb-7 flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800"><span class="h-px w-8 bg-emerald-700"></span> Your neighborhood, your library</p>
+          <h1 class="max-w-4xl text-5xl font-light leading-[1.05] tracking-[-.055em] sm:text-6xl lg:text-8xl">A place to<br/><span class="font-medium italic text-emerald-800">belong.</span> A world<br/>to discover.</h1>
+          <p class="mt-8 max-w-lg text-base leading-7 text-slate-600">More than shelves and stories. Find a quiet corner, meet curious minds, and make room for the next big idea at Greenwood Public Library.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="#sections" class="rounded-full bg-emerald-900 px-7 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-emerald-800">Explore Collection <span class="ml-2">↗</span></a>
+            <a href="#membership" class="rounded-full border border-slate-400 px-7 py-3.5 text-sm font-semibold transition-all duration-300 hover:-translate-y-1 hover:border-emerald-900 hover:bg-emerald-50">Join Free</a>
+          </div>
+        </div>
+        <div class="relative lg:col-span-5">
+          <div class="absolute -right-3 -top-5 z-10 grid h-24 w-24 animate-float place-items-center rounded-full bg-amber-200 text-center text-[10px] font-bold uppercase leading-4 tracking-widest text-amber-950 sm:-right-5">Read<br/>. Learn<br/>. Grow.</div>
+          <div class="group overflow-hidden rounded-t-[10rem] rounded-b-2xl">
+            <img class="h-[390px] w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-[510px]" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=85" alt="Warm, sunlit library reading room" />
+          </div>
+          <p class="mt-3 flex justify-between text-[10px] uppercase tracking-[.18em] text-slate-500"><span>Greenwood reading room</span><span>Est. 1984</span></p>
+        </div>
+      </div>
+      <div class="mt-16 grid grid-cols-2 gap-7 border-t border-slate-300 pt-7 sm:grid-cols-4">
+        <div><p class="text-3xl font-medium tracking-tight">12,000<span class="text-emerald-700">+</span></p><p class="mt-1 text-xs text-slate-500">Books to explore</p></div>
+        <div><p class="text-3xl font-medium tracking-tight">40<span class="text-emerald-700">+</span></p><p class="mt-1 text-xs text-slate-500">Years of stories</p></div>
+        <div><p class="text-3xl font-medium tracking-tight">Free</p><p class="mt-1 text-xs text-slate-500">Wi-Fi for everyone</p></div>
+        <div><p class="text-3xl font-medium tracking-tight">06</p><p class="mt-1 text-xs text-slate-500">Curated sections</p></div>
+      </div>
+    </section>
+
+    <!-- Sections -->
+    <section id="sections" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-12 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+          <div><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Find your next favorite</p><h2 class="text-4xl font-light tracking-tight sm:text-5xl">A shelf for every<br/><span class="italic text-emerald-800">kind of curious.</span></h2></div>
+          <p class="max-w-sm text-sm leading-6 text-slate-500">From page-turning fiction to practical knowledge, there's always something waiting to surprise you.</p>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <a href="#membership" class="group rounded-2xl bg-slate-50 p-7 transition-all duration-300 hover:bg-emerald-50 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-slate-400">01 / STORIES</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-emerald-800">Fiction & Literature</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-500 transition-colors group-hover:text-emerald-900">Lose yourself in timeless classics, contemporary voices, and stories from around the world.</p>
+          </a>
+          <a href="#membership" class="group rounded-2xl bg-amber-50 p-7 transition-all duration-300 hover:bg-amber-100 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-amber-800/60">02 / LITTLE READERS</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-amber-900">Children's Corner</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-600">A colorful world of picture books, imagination, and first adventures for young minds.</p>
+          </a>
+          <a href="#membership" class="group rounded-2xl bg-violet-50 p-7 transition-all duration-300 hover:bg-violet-100 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-violet-800/60">03 / IDEAS</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-violet-900">Science & Discovery</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-500">Explore the questions shaping our universe, from nature to technology and beyond.</p>
+          </a>
+          <a href="#membership" class="group rounded-2xl bg-emerald-50 p-7 transition-all duration-300 hover:bg-emerald-100 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-emerald-800/60">04 / REAL LIVES</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-emerald-900">History & Biography</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-500">Discover the people, places, and moments that have shaped the world we share.</p>
+          </a>
+          <a href="#membership" class="group rounded-2xl bg-rose-50 p-7 transition-all duration-300 hover:bg-rose-100 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-rose-800/60">05 / EVERYDAY</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-rose-900">Lifestyle & Learning</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-500">Fresh inspiration for cooking, creativity, wellbeing, and lifelong learning.</p>
+          </a>
+          <a href="#membership" class="group rounded-2xl bg-zinc-100 p-7 transition-all duration-300 hover:bg-zinc-200 sm:p-9">
+            <div class="flex items-start justify-between"><span class="text-xs text-zinc-500">06 / ONLINE</span><span class="text-2xl transition-transform duration-300 group-hover:translate-x-2 group-hover:-translate-y-1">↗</span></div>
+            <h3 class="mt-12 text-3xl font-medium tracking-tight transition-colors group-hover:text-zinc-800">Digital Library</h3><p class="mt-3 max-w-md text-sm leading-6 text-slate-500">Access e-books, digital resources, and learning tools wherever you are.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div class="mb-12 flex items-end justify-between"><div><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Take a look around</p><h2 class="text-4xl font-light tracking-tight sm:text-5xl">Spaces made for<br/><span class="italic text-emerald-800">slowing down.</span></h2></div><span class="hidden text-xs text-slate-500 sm:block">A little room for everyone ↘</span></div>
+      <div class="grid gap-5 sm:grid-cols-2">
+        <div class="group"><div class="overflow-hidden rounded-xl"><img class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-96" src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1000&q=85" alt="Library shelves and reading tables"/></div><div class="mt-4 flex items-center justify-between"><h3 class="font-medium">The Main Reading Hall</h3><span class="rounded-full border border-slate-300 px-3 py-1 text-[10px] uppercase tracking-wider text-slate-500">Ground floor</span></div></div>
+        <div class="group sm:mt-16"><div class="overflow-hidden rounded-xl"><img class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-96" src="https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?auto=format&fit=crop&w=1000&q=85" alt="Books arranged on a library shelf"/></div><div class="mt-4 flex items-center justify-between"><h3 class="font-medium">The Quiet Collection</h3><span class="rounded-full border border-slate-300 px-3 py-1 text-[10px] uppercase tracking-wider text-slate-500">First floor</span></div></div>
+        <div class="group"><div class="overflow-hidden rounded-xl"><img class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-96" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=1000&q=85" alt="Cozy library reading area"/></div><div class="mt-4 flex items-center justify-between"><h3 class="font-medium">Community & Study</h3><span class="rounded-full border border-slate-300 px-3 py-1 text-[10px] uppercase tracking-wider text-slate-500">Second floor</span></div></div>
+        <div class="group sm:mt-16"><div class="overflow-hidden rounded-xl"><img class="h-72 w-full object-cover transition-transform duration-700 group-hover:scale-105 sm:h-96" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85" alt="Bright collaborative workspace"/></div><div class="mt-4 flex items-center justify-between"><h3 class="font-medium">The Learning Studio</h3><span class="rounded-full border border-slate-300 px-3 py-1 text-[10px] uppercase tracking-wider text-slate-500">Annex</span></div></div>
+      </div>
+    </section>
+
+    <!-- Values bento -->
+    <section class="bg-slate-900 py-20 text-white lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-12 flex flex-col justify-between gap-5 sm:flex-row sm:items-end"><div><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-300">The Greenwood difference</p><h2 class="text-4xl font-light tracking-tight sm:text-5xl">Rooted in community.<br/><span class="italic text-emerald-300">Open to possibility.</span></h2></div><p class="max-w-sm text-sm leading-6 text-slate-300">A library is not just a building. It's a shared resource, a meeting point, and a place where everyone has a seat.</p></div>
+        <div class="grid gap-4 md:grid-cols-4">
+          <div class="rounded-2xl bg-slate-100 p-8 text-slate-900 transition-colors hover:bg-slate-200 md:col-span-2 md:row-span-2"><p class="text-xs uppercase tracking-widest text-slate-500">A little about us</p><h3 class="mt-14 max-w-lg text-4xl font-light leading-tight tracking-tight">Curiosity has a home. <span class="italic text-emerald-800">It's here.</span></h3><p class="mt-6 max-w-md text-sm leading-6 text-slate-600">Since 1984, Greenwood has brought neighbors together through books, ideas, shared spaces, and the belief that knowledge should be within everyone's reach.</p><a href="#visit" class="mt-8 inline-block border-b border-slate-900 pb-1 text-sm font-semibold">Come say hello ↗</a></div>
+          <div class="rounded-2xl bg-emerald-200 p-7 text-emerald-950 transition-colors hover:bg-emerald-300"><span class="text-3xl">✳</span><h3 class="mt-8 text-xl font-medium">Community first</h3><p class="mt-2 text-sm leading-5 text-emerald-950/70">A welcoming place for every age and every story.</p></div>
+          <div class="rounded-2xl bg-amber-100 p-7 text-amber-950 transition-colors hover:bg-amber-200"><span class="text-3xl">40+</span><h3 class="mt-5 text-xl font-medium">Years of stories</h3><p class="mt-2 text-sm leading-5 text-amber-950/70">Four decades of learning, sharing, and growing.</p></div>
+          <div class="rounded-2xl bg-rose-200 p-7 text-rose-950 transition-colors hover:bg-rose-300"><span class="text-3xl">✦</span><h3 class="mt-8 text-xl font-medium">Events & ideas</h3><p class="mt-2 text-sm leading-5 text-rose-950/70">Workshops, talks, clubs, and creative sessions.</p></div>
+          <div class="rounded-2xl bg-violet-200 p-7 text-violet-950 transition-colors hover:bg-violet-300"><span class="text-3xl">⌘</span><h3 class="mt-8 text-xl font-medium">Digital access</h3><p class="mt-2 text-sm leading-5 text-violet-950/70">Resources and reading beyond our walls.</p></div>
+          <div class="rounded-2xl bg-zinc-200 p-7 text-zinc-950 transition-colors hover:bg-zinc-300 md:col-span-2"><div class="flex items-start justify-between"><div><span class="text-xs uppercase tracking-widest text-zinc-500">Open doors</span><h3 class="mt-5 text-2xl font-medium">Knowledge belongs to everyone.</h3></div><span class="text-3xl">↗</span></div><p class="mt-3 text-sm text-zinc-600">Accessible spaces, friendly staff, and free Wi-Fi make it easier to make the most of your visit.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div class="grid gap-10 lg:grid-cols-12">
+        <div class="lg:col-span-5"><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Our story</p><h2 class="text-4xl font-light leading-tight tracking-tight sm:text-5xl">A quiet place<br/>for <span class="italic text-emerald-800">big thoughts.</span></h2></div>
+        <div class="columns-1 gap-10 text-sm leading-7 text-slate-600 sm:columns-2 lg:col-span-7"><p class="mb-5 break-inside-avoid">Greenwood Public Library began with a simple idea: a stronger community starts with shared knowledge. What began as a small neighborhood reading room has grown into a lively public space for readers, learners, makers, and families.</p><p class="mb-5 break-inside-avoid">Today, our shelves hold thousands of books, but our purpose reaches much further. We create opportunities to learn new skills, discover different perspectives, and connect with people who share your interests.</p><p class="mb-5 break-inside-avoid">Whether you visit for ten minutes or spend the whole afternoon, we want you to feel at home. Browse a new author, join a community event, or simply find a sunny spot and turn a page.</p><p class="break-inside-avoid">Our doors are open to all. Come as you are, bring your curiosity, and let the next chapter begin.</p></div>
+      </div>
+    </section>
+
+    <!-- Membership -->
+    <section id="membership" class="bg-[#e9eee8] py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-12 text-center"><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Make yourself at home</p><h2 class="text-4xl font-light tracking-tight sm:text-5xl">Membership, made <span class="italic text-emerald-800">simple.</span></h2><p class="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-600">Choose the membership that fits your reading life. Every plan opens the door to a world of possibility.</p></div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="flex flex-col justify-between rounded-2xl bg-white p-7"><div><p class="text-xs uppercase tracking-widest text-slate-400">Start here</p><h3 class="mt-5 text-2xl font-medium">A library for all</h3><p class="mt-3 text-sm leading-6 text-slate-500">Not sure yet? Visit, explore, and talk to our team about the right plan for you.</p></div><a href="#visit" class="mt-8 border-b border-slate-300 pb-2 text-sm font-semibold">Plan a visit ↗</a></div>
+          <article class="overflow-hidden rounded-2xl bg-white"><div class="group h-36 overflow-hidden"><img class="h-full w-full object-cover brightness-95 transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=700&q=80" alt="Open book on a table"/></div><div class="p-7"><p class="text-xs uppercase tracking-widest text-slate-400">For individuals</p><h3 class="mt-2 text-2xl font-medium">Basic</h3><p class="mt-4 text-3xl font-medium">Free</p><ul class="mt-5 space-y-2 text-sm text-slate-500"><li>✓ Borrow up to 3 books</li><li>✓ Library Wi-Fi access</li><li>✓ Community events</li></ul><a href="#visit" class="mt-7 block rounded-full border border-slate-300 py-3 text-center text-sm font-semibold transition-colors hover:bg-slate-900 hover:text-white">Get started</a></div></article>
+          <article class="relative overflow-hidden rounded-2xl bg-white ring-2 ring-emerald-800"><div class="absolute right-4 top-4 z-10 rounded-full bg-emerald-900 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-white">Popular</div><div class="group h-36 overflow-hidden"><img class="h-full w-full object-cover brightness-95 transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1455390582262-044c ocurre?auto=format&fit=crop&w=700&q=80" alt="Student studying with books" onerror="this.src='https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=700&q=80'"/></div><div class="p-7"><p class="text-xs uppercase tracking-widest text-slate-400">For learners</p><h3 class="mt-2 text-2xl font-medium">Student</h3><p class="mt-4 text-3xl font-medium">Free</p><ul class="mt-5 space-y-2 text-sm text-slate-500"><li>✓ Borrow up to 6 books</li><li>✓ Study room access</li><li>✓ Digital resources</li></ul><a href="#visit" class="mt-7 block rounded-full bg-emerald-900 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-emerald-800">Join as student</a></div></article>
+          <article class="overflow-hidden rounded-2xl bg-white"><div class="group h-36 overflow-hidden"><img class="h-full w-full object-cover brightness-95 transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=700&q=80" alt="Family spending time together"/></div><div class="p-7"><p class="text-xs uppercase tracking-widest text-slate-400">For households</p><h3 class="mt-2 text-2xl font-medium">Family</h3><p class="mt-4 text-3xl font-medium">Free</p><ul class="mt-5 space-y-2 text-sm text-slate-500"><li>✓ Up to 4 family members</li><li>✓ Children's activities</li><li>✓ Family reading events</li></ul><a href="#visit" class="mt-7 block rounded-full border border-slate-300 py-3 text-center text-sm font-semibold transition-colors hover:bg-slate-900 hover:text-white">Join as family</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="mx-auto max-w-5xl px-5 py-20 text-center lg:py-28">
+      <p class="text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Kind words from our community</p>
+      <div class="mx-auto mt-8 max-w-4xl"><span class="text-6xl font-serif leading-none text-emerald-800">“</span><blockquote class="text-2xl font-light leading-relaxed tracking-tight sm:text-4xl">Greenwood has become our family's favorite place. My children found a love of reading here, and I found a community that feels like home.</blockquote></div>
+      <div class="mt-8 flex items-center justify-center gap-3"><img class="h-12 w-12 rounded-full object-cover grayscale transition-all duration-500 hover:grayscale-0" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=120&q=80" alt="Portrait of library member"/><div class="text-left"><p class="text-sm font-semibold">Sarah Mitchell</p><p class="text-xs text-slate-500">Greenwood member</p></div></div>
+    </section>
+
+    <!-- Events -->
+    <section id="events" class="bg-white py-20 lg:py-28">
+      <div class="mx-auto max-w-7xl px-5 lg:px-8">
+        <div class="mb-12 flex items-end justify-between"><div><p class="mb-4 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-800">Save a date</p><h2 class="text-4xl font-light tracking-tight sm:text-5xl">Good things are<br/><span class="italic text-emerald-800">happening here.</span></h2></div><a href="#visit" class="hidden text-sm font-semibold underline underline-offset-4 sm:block">All events ↗</a></div>
+        <div class="grid gap-7 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="group"><div class="overflow-hidden rounded-xl"><img class="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=700&q=80" alt="Books and notebook for book club"/></div><p class="mt-5 text-[10px] font-semibold uppercase tracking-widest text-emerald-800">18 May · 11:00 AM</p><h3 class="mt-2 text-xl font-medium">The Sunday Book Club</h3><p class="mt-2 text-sm leading-6 text-slate-500">A relaxed morning of good books and better conversations.</p></article>
+          <article class="group"><div class="overflow-hidden rounded-xl"><img class="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80" alt="Children learning together"/></div><p class="mt-5 text-[10px] font-semibold uppercase tracking-widest text-emerald-800">24 May · 10:30 AM</p><h3 class="mt-2 text-xl font-medium">Little Story Explorers</h3><p class="mt-2 text-sm leading-6 text-slate-500">Stories, playful activities, and big imaginations for little readers.</p></article>
+          <article class="group"><div class="overflow-hidden rounded-xl"><img class="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=700&q=80" alt="Technology workshop"/></div><p class="mt-5 text-[10px] font-semibold uppercase tracking-widest text-emerald-800">01 Jun · 2:00 PM</p><h3 class="mt-2 text-xl font-medium">Digital Skills Lab</h3><p class="mt-2 text-sm leading-6 text-slate-500">Build confidence with useful digital tools in a friendly setting.</p></article>
+          <article class="group"><div class="overflow-hidden rounded-xl"><img class="h-52 w-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=700&q=80" alt="People connecting at a community event"/></div><p class="mt-5 text-[10px] font-semibold uppercase tracking-widest text-emerald-800">08 Jun · 4:00 PM</p><h3 class="mt-2 text-xl font-medium">Community Open House</h3><p class="mt-2 text-sm leading-6 text-slate-500">Meet your neighbors, explore the library, and find your people.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit CTA -->
+    <section id="visit" class="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+      <div class="overflow-hidden rounded-3xl bg-emerald-100 p-8 sm:p-12 lg:p-16">
+        <div class="grid gap-10 lg:grid-cols-2 lg:items-end">
+          <div><p class="mb-5 text-[11px] font-semibold uppercase tracking-[.25em] text-emerald-900">Your next chapter starts here</p><h2 class="text-4xl font-light leading-tight tracking-tight sm:text-6xl">Come find us<br/><span class="italic text-emerald-800">in Greenwood.</span></h2><p class="mt-6 text-sm leading-6 text-emerald-950/70">24 Garden Lane, Greenwood, New Delhi 110001</p></div>
+          <div class="lg:justify-self-end"><p class="text-sm font-semibold text-emerald-950">Opening hours</p><div class="mt-3 space-y-2 text-sm text-emerald-950/70"><p class="flex justify-between gap-10"><span>Monday – Friday</span><span>9:00 AM – 7:00 PM</span></p><p class="flex justify-between gap-10"><span>Saturday</span><span>10:00 AM – 5:00 PM</span></p><p class="flex justify-between gap-10"><span>Sunday</span><span>Closed</span></p></div><div class="mt-8 flex flex-wrap gap-3"><a href="https://www.google.com/maps/search/?api=1&query=Greenwood+Public+Library" target="_blank" rel="noopener noreferrer" class="rounded-full bg-emerald-900 px-6 py-3 text-sm font-semibold text-white transition-all hover:-translate-y-1 hover:bg-emerald-800">Get Directions ↗</a><a href="mailto:hello@greenwoodlibrary.example" class="rounded-full border border-emerald-900 px-6 py-3 text-sm font-semibold text-emerald-950 transition-colors hover:bg-emerald-200">Email us</a></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white">
+    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-14 sm:grid-cols-2 lg:grid-cols-5 lg:px-8">
+      <div class="lg:col-span-2"><a href="#home" class="text-2xl font-semibold tracking-tight">Greenwood<span class="text-emerald-300">.</span></a><p class="mt-4 max-w-xs text-sm leading-6 text-slate-400">A welcoming public library for curious minds, open hearts, and stories yet to be told.</p><div class="mt-6 flex gap-2"><a href="#" aria-label="Instagram" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-xs transition-colors hover:bg-emerald-700">ig</a><a href="#" aria-label="Facebook" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-xs transition-colors hover:bg-emerald-700">f</a><a href="#" aria-label="Twitter" class="grid h-9 w-9 place-items-center rounded-full border border-slate-700 text-xs transition-colors hover:bg-emerald-700">𝕏</a></div></div>
+      <div><h3 class="text-sm font-semibold">Pages</h3><ul class="mt-5 space-y-3 text-sm text-slate-400"><li><a class="transition-colors hover:text-emerald-300" href="#home">Home</a></li><li><a class="transition-colors hover:text-emerald-300" href="#sections">Sections</a></li><li><a class="transition-colors hover:text-emerald-300" href="#gallery">Gallery</a></li><li><a class="transition-colors hover:text-emerald-300" href="#membership">Membership</a></li></ul></div>
+      <div><h3 class="text-sm font-semibold">Sections</h3><ul class="mt-5 space-y-3 text-sm text-slate-400"><li>Fiction</li><li>Children's</li><li>Science</li><li>Digital Library</li></ul></div>
+      <div><h3 class="text-sm font-semibold">Details</h3><ul class="mt-5 space-y-3 text-sm text-slate-400"><li><a class="transition-colors hover:text-emerald-300" href="#visit">Visit us</a></li><li><a class="transition-colors hover:text-emerald-300" href="mailto:hello@greenwoodlibrary.example">Contact</a></li><li>Privacy policy</li><li>Terms of use</li></ul></div>
+    </div>
+    <div class="border-t border-slate-800"><div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-5 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8"><p>© 2026 Greenwood Public Library. All rights reserved.</p><div class="flex gap-5"><a href="#" class="transition-colors hover:text-white">Privacy</a><a href="#" class="transition-colors hover:text-white">Terms</a><a href="#home" class="transition-colors hover:text-white">Back to top ↑</a></div></div></div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.textContent = isOpen ? '☰' : '✕';
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation menu' : 'Close navigation menu');
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.textContent = '☰';
+        menuButton.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+  </script>
+</body>
+</html>
